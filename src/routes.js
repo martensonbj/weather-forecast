@@ -6,6 +6,7 @@ import App from './containers/App';
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App} />
+    {/*<Route path="/settings" component={Settings} />*/}
   </Router>
 );
 

@@ -9,3 +9,6 @@ build
 # misc
 .DS_Store
 npm-debug.log
+
+OpenWeatherKey
+9368e7f02a2beece1296d5538c3bdb6c
