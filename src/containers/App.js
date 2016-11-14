@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import App from '../components/App'
+import { setLocation } from '../actions/index'
 
-const mapStateToProps = state => {
-  // return an object of redux store data
-  // that you'd like available in your component
-  return {};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setLocation: (location) => {
+      console.log('app container dispatching to props');
+      dispatch(setLocation(location))
+    }
+  }
 }
 
-const mapDispatchToProps = dispatch => {
-  // return an object of methods you'd like
-  // to dispatch as redux actions
-  return {};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

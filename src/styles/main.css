@@ -1,0 +1,104 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,400,500');
+
+/* RGB */
+/*// $color1: rgba(234, 196, 53, 1);
+// $color2: rgba(52, 89, 149, 1);
+// $color3: rgba(228, 0, 102, 1);
+// $color4: rgba(3, 206, 164, 1);
+// $color5: rgba(251, 77, 61, 1);*/
+
+body {
+  background: rgba(3, 206, 164, 1);
+  font-family: 'Dosis', sans-serif;
+}
+
+h2 {
+    color: rgba(52, 89, 149, 1);
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+p {
+  line-height: 2em;
+}
+
+.Header {
+  height: 50px;
+  padding: 10px;
+  background: rgba(228, 0, 102, 1);
+  color: #f4f4f4;
+  width: 100%;
+}
+
+.loading-local {
+  font-size: .8em;
+  font-style: italic;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.local-weather-results {
+  color: rgb(234, 196, 53);
+  font-weight: 100;
+  margin-left: 10px;
+}
+
+.current-weather-container {
+  display: inline-block;
+  position: relative;
+  left: 40px;
+}
+
+.current-location-container {
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+
+}
+
+.current-weather-container p, .current-location-container p {
+  font-size: 1.5em;
+}
+
+.Cities {
+  display: flex;
+}
+
+.City {
+  background: rgba(251, 77, 61, 1);
+  color: #f4f4f4;
+  flex: 1;
+  height: 300px;
+  margin: 50px;
+  padding: 10px;
+  position: relative;
+}
+
+.extended-link {
+  background: rgba(0,0,0,0.2);
+  bottom: 0;
+  letter-spacing: 3px;
+  line-height: 3em;
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  width: 100%;
+}
+
+footer {
+  background-color: rgba(234, 196, 53, 1);
+  bottom: 0;
+  color: rgba(52, 89, 149, 1);
+  height: 40px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%
+}
+
+footer p {
+  font-size: 1.2em;
+}

@@ -1,8 +1,8 @@
-const exampleReducer = (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { combineReducers } from 'redux'
+import localWeatherReducer from './localWeather'
 
-export default exampleReducer;
+const rootReducer = combineReducers({
+  localWeatherReducer
+})
+
+export default rootReducer;
