@@ -1,12 +1,22 @@
 import React from 'react'
 import City from './City'
 
-const Cities = () => {
+const getPinnedCities = (cities) => {
+  console.log("in get pinned cities");
+  // return (
+  //   cities.forEach( city => {
+  //     return <City name={city.name} desc={city.desc} temp={city.temp} />
+  //   })
+  // )
+}
+
+const Cities = ({pinnedCities}) => {
   return (
     <section className="Cities">
-      <City />
-      <City />
-      <City />
+       {/*{ getPinnedCities(pinnedCities) }*/}
+       <City />
+       <City />
+       <City />
     </section>
   )
 }

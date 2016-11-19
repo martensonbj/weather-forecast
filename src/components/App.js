@@ -27,7 +27,6 @@ class App extends Component {
       <section className="Application">
         <Header />
         <div>{this.props.children}</div>
-        <Cities />
         <Footer />
       </section>
     )

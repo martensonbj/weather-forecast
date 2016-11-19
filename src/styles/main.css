@@ -63,6 +63,60 @@ p {
   font-size: 1.5em;
 }
 
+.Settings form {
+  background: rgba(0,0,0,0.3);
+  padding: 30px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  height: 25px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  text-align: center;
+  color: #aaa;
+  font-size: 16px;
+  font-weight: 100;
+  margin-right: 15px;
+}
+
+button {
+  border: none;
+  outline: none;
+  color: #f4f4f4;
+  background: rgba(255,255,255,0.4);
+  height: 35px;
+  width: 36px;
+  padding: 0px;
+  font-size: 22px;
+  position: relative;
+  top: 2px;
+  left: -13px;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.8);
+  cursor: pointer;
+}
+
+.Settings section {
+  text-align: center;
+}
+
+.settings-link {
+    position: absolute;
+    right: 34px;
+    text-decoration: none;
+    padding: 10px;
+    color: #f4f4f4;
+}
+
+.settings-link:hover {
+  color: rgb(234, 196, 53);
+}
+
 .Cities {
   display: flex;
 }

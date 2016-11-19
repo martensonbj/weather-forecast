@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Header = ({localWeather}) => {
-  debugger;
   return (
     <section className="Header">
       <div className="current-weather-container">
@@ -16,7 +15,7 @@ const Header = ({localWeather}) => {
         </p>
       </div>
       <div className="current-location-container">
-        <p>Location: 
+        <p>Location:
         { localWeather.city
           ? <span className="local-weather-results"> { localWeather.city }</span>
           : <span className="loading-local"> Loading city... </span>
