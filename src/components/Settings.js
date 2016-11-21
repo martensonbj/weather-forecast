@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
-import NewCityForm from './NewCityForm'
+import NewCityForm from '../containers/NewCityForm'
 import DisplayCity from './DisplayCity'
 
 const getPinnedCities = (pinnedCities) => {
   return pinnedCities.map((city, i) => {
     return (
       <div key={i} className="listed-city">
-        { city.name === 'default'
+        { city.city === 'default'
           ? <NewCityForm index={i} />
-          : <DisplayCity index={i} name={city.name} /> }
+          : <DisplayCity index={i} city={city.city} /> }
       </div>
     )
   })

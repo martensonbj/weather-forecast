@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from '../containers/Header'
 import Footer from './Footer'
 
-
 class App extends Component {
 
   getLocalCoords() {
@@ -16,7 +15,7 @@ class App extends Component {
       this.props.setLocation(location)
     });
   }
-
+  //
   // componentDidMount() {
   //   this.getLocalCoords()
   // }

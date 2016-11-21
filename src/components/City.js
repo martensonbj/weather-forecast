@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
-import NewCityForm from './NewCityForm'
+import NewCityForm from '../containers/NewCityForm'
 
 const getBlankCity = (index) => {
   return (
@@ -9,10 +8,10 @@ const getBlankCity = (index) => {
 }
 
 const getCity = (props) => {
-  const { name, desc, temp, wind, index } = props
+  const { city, desc, temp, wind } = props
   return (
     <div className="Filled-City">
-      <h2>{name}</h2>
+      <h2>{city}</h2>
       <p className="weather">{desc}</p>
       <p className="weather">{temp}</p>
       <p className="weather">{wind}</p>
@@ -22,10 +21,10 @@ const getCity = (props) => {
 }
 
 const City = (props) => {
-  const { name, index } = props
+  const { city, index } = props
   return (
     <div className="City">
-      { name === 'default' ? getBlankCity(index) : getCity(props) }
+      { city === 'default' ? getBlankCity(index) : getCity(props) }
     </div>
   )
 }

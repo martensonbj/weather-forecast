@@ -5,7 +5,7 @@ const getPinnedCities = (cities) => {
   console.log("in get pinned cities");
   return cities.map( (city, i) => {
     return (
-      <City key={i} index={i} name={city.name} desc={city.description} temp={city.temp} wind={city.wind} />
+      <City key={i} index={i} city={city.city} desc={city.description} temp={city.temp} wind={city.wind} />
     )
   })
 }

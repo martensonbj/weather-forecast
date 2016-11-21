@@ -1,24 +1,21 @@
 import React from 'react'
 
-// FORM STUFF
+const handleSubmit = (e, input, setNewCity, index) => {
+  e.preventDefault()
+  let city = input.value.toLowerCase()
+  setNewCity(city, index)
+}
 
-/*
-  onSubmit
-  Grab city name
-  Clean city name
-  send it through API call - setLocation action
-  getWeather response
-  save weather response into localStorage
-
-*/
-
-const Form = ({index}) => {
+const NewCityForm = ({index, setNewCity}) => {
+  let input;
   return (
-    <form className="NewCityForm">
-      <input type="text" placeholder="Enter City" />
+    <form className="NewCityForm" onSubmit={(e) => handleSubmit(e, input, setNewCity, index)}>
+      <input  type="text"
+              placeholder="Enter City"
+              ref={(node) => { input = node }}/>
       <button>+</button>
     </form>
   )
 }
 
-export default Form;
+export default NewCityForm;
