@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 import App from './containers/App';
 import Main from './components/Main';
-import Settings from './components/Settings';
+import Settings from './containers/Settings';
 
 const Routes = (props) => (
   <Router {...props}>

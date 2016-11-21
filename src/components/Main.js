@@ -1,5 +1,5 @@
 import React from 'react'
-import Cities from './Cities'
+import Cities from '../containers/Cities'
 import { Link } from 'react-router'
 
 const Main = () => {

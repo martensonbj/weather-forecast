@@ -1,49 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router'
+import NewCityForm from './NewCityForm'
+import DisplayCity from './DisplayCity'
 
 const getPinnedCities = (pinnedCities) => {
-  if (pinnedCities) {
+  return pinnedCities.map((city, i) => {
     return (
-      <ul>
-        { pinnedCities.forEach(city => {
-          <li>{city.name}</li>
-        })}
-      </ul>
+      <div key={i} className="listed-city">
+        { city.name === 'default'
+          ? <NewCityForm index={i} />
+          : <DisplayCity index={i} name={city.name} /> }
+      </div>
     )
-  } else {
-    return (
-      <p>You have not saved any cities.</p>
-    )
-  }
+  })
 }
 
-
-// FORM STUFF
-
-/*
-  onSubmit
-  Grab city name
-  Clean city name
-  send it through API call - setLocation action
-  getWeather response
-  save weather response into localStorage
-
-*/
 const Settings = ( { pinnedCities } ) => {
 
   return (
     <section className="Settings">
-
-      <section>
-        <h2>Pinned Cities</h2>
-
-        <form>
-          <input type="text" placeholder="Enter City" />
-          <button>+</button>
-        </form>
-
+      <Link to="/" className="settings-link">Home</Link>
+      <h2>Pinned Cities</h2>
+      <section className="pinned-cities">
         { getPinnedCities(pinnedCities) }
       </section>
-
     </section>
   )
 

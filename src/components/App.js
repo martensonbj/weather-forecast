@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../containers/Header'
-import Cities from './Cities'
 import Footer from './Footer'
 
 
@@ -18,9 +17,9 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    this.getLocalCoords()
-  }
+  // componentDidMount() {
+  //   this.getLocalCoords()
+  // }
 
   render () {
     return (

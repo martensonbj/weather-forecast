@@ -1,5 +1,5 @@
 const defaultState = [
-  { name: "default", temp: "", description: "", wind: ""},
+  { name: "Sarasota", temp: "", description: "", wind: ""},
   { name: "default", temp: "", description: "", wind: ""},
   { name: "default", temp: "", description: "", wind: ""}
 ]

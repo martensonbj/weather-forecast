@@ -3,20 +3,17 @@ import City from './City'
 
 const getPinnedCities = (cities) => {
   console.log("in get pinned cities");
-  // return (
-  //   cities.forEach( city => {
-  //     return <City name={city.name} desc={city.desc} temp={city.temp} />
-  //   })
-  // )
+  return cities.map( (city, i) => {
+    return (
+      <City key={i} index={i} name={city.name} desc={city.description} temp={city.temp} wind={city.wind} />
+    )
+  })
 }
 
 const Cities = ({pinnedCities}) => {
   return (
     <section className="Cities">
-       {/*{ getPinnedCities(pinnedCities) }*/}
-       <City />
-       <City />
-       <City />
+      { getPinnedCities(pinnedCities) }
     </section>
   )
 }

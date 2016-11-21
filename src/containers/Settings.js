@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
-import Cities from '../components/Cities'
+import Settings from '../components/Settings'
 
 const mapStateToProps = (state) => {
   return { pinnedCities: state.pinnedCitiesReducer }
 }
 
-export default connect(mapStateToProps, null)(Cities)
+export default connect(mapStateToProps, null)(Settings)
