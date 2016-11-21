@@ -1,7 +1,7 @@
 const defaultState = [
-  { index: 0, city: "default", temp: "", desc: "", wind: ""},
-  { index: 1, city: "default", temp: "", desc: "", wind: ""},
-  { index: 2, city: "default", temp: "", desc: "", wind: ""}
+  { index: 0, city: "default", temp: "", desc: "", wind: "", editing: false},
+  { index: 1, city: "default", temp: "", desc: "", wind: "", editing: false},
+  { index: 2, city: "default", temp: "", desc: "", wind: "", editing: false}
 ]
 
 const pinnedCitiesReducer = (state = defaultState, action) => {
@@ -10,6 +10,8 @@ const pinnedCitiesReducer = (state = defaultState, action) => {
       let newState = state.concat([])
       newState[action.cityWeather.index] = action.cityWeather
       return newState
+    case 'TOGGLE_EDIT':
+      return state;
     default:
       return defaultState
   }

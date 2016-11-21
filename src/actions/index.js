@@ -8,7 +8,8 @@ const getWeather = (response) => {
     city: response.city.name,
     temp: response.list[0].main.temp,
     desc: response.list[0].weather[0].main,
-    wind: response.list[0].wind.speed
+    wind: response.list[0].wind.speed,
+    editing: false
   }
 
   return {

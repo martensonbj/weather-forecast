@@ -15,10 +15,10 @@ class App extends Component {
       this.props.setLocation(location)
     });
   }
-  //
-  // componentDidMount() {
-  //   this.getLocalCoords()
-  // }
+  
+  componentDidMount() {
+    this.getLocalCoords()
+  }
 
   render () {
     return (

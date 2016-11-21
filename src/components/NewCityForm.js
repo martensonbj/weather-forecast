@@ -13,7 +13,6 @@ const NewCityForm = ({index, setNewCity}) => {
       <input  type="text"
               placeholder="Enter City"
               ref={(node) => { input = node }}/>
-      <button>+</button>
     </form>
   )
 }
