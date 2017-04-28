@@ -49,6 +49,18 @@ p {
   width: 100%;
 }
 
+.Header .brand {
+    color: #252627;
+    box-shadow: 0px 0px 40px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.Header .brand:hover {
+  color: #000;
+  cursor: pointer;
+}
+
 .loading-local {
   font-size: .8em;
   font-style: italic;

@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Header = ({localWeather}) => {
   return (
     <section className="Header">
+      <Link to="/"><span className="brand">WF</span></Link>
       <div className="current-weather-container">
         <p>Current Weather:
             { localWeather.city
@@ -17,7 +19,7 @@ const Header = ({localWeather}) => {
       <div className="current-location-container">
         <p>Location:
         { localWeather.city
-          ? <span className="local-weather-results"> { localWeather.city }</span>
+          ? <Link to={localWeather.city.toLowerCase()}><span className="local-weather-results"> { localWeather.city }</span></Link>
           : <span className="loading-local"> Loading city... </span>
         }
         </p>

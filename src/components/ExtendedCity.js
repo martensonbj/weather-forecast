@@ -1,5 +1,9 @@
 import React from 'react'
 
+const capitalizeWord = (word) => {
+  return word[0].toUpperCase() + word.slice(1)
+}
+
 const getDays = () => {
   let things = [0, 1, 2, 3, 4, 5]
   return things.map((thing, i) => {
@@ -25,9 +29,10 @@ const getDays = () => {
 }
 
 const ExtendedCity = (props) => {
+  const { routeParams } = props
   return (
     <section className="ExtendedCity">
-      <h2>5 Day Extended Forecast: <span>City Name</span></h2>
+      <h2>5 Day Extended Forecast: <span>{capitalizeWord(routeParams.city)}</span></h2>
       <section className="extended-days">
         { getDays() }
       </section>
