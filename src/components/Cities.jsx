@@ -2,15 +2,14 @@ import React from 'react'
 import City from './City'
 
 const getPinnedCities = (cities) => {
-  console.log("in get pinned cities");
-  return cities.map( (city, i) => {
+  return cities.map((city, index) => {
     return (
-      <City key={i} index={i} city={city.city} desc={city.desc} temp={city.temp} wind={city.wind} />
+      <City key={index} index={index} city={city.city} desc={city.desc} temp={city.temp} wind={city.wind} />
     )
   })
 }
 
-const Cities = ({pinnedCities}) => {
+const Cities = ({ pinnedCities }) => {
   return (
     <section className="Cities">
       { getPinnedCities(pinnedCities) }

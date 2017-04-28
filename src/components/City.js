@@ -1,9 +1,10 @@
 import React from 'react'
 import NewCityForm from '../containers/NewCityForm'
+import { Link } from 'react-router'
 
 const getBlankCity = (index) => {
   return (
-    <NewCityForm index={index}/>
+    <NewCityForm index={index} />
   )
 }
 
@@ -15,7 +16,7 @@ const getCity = (props) => {
       <p className="weather description">{desc}</p>
       <p className="weather">Temperature: <span>{temp}</span></p>
       <p className="weather">Wind Speed: <span>{wind} mph</span></p>
-      <p className="extended-link">View extended forecast...</p>
+      <Link to={city.toLowerCase()}><button className="extended-link">View extended forecast...</button></Link>
     </div>
   )
 }

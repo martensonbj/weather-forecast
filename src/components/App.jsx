@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Header from '../containers/Header'
 import Footer from './Footer'
 
 class App extends Component {
 
-  getLocalCoords() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      let lat = position.coords.latitude
-      let long = position.coords.longitude
-      let location = {
-        latitude: lat,
-        longitude: long,
-      }
-      this.props.setLocation(location)
-    });
-  }
-  
   componentDidMount() {
     this.getLocalCoords()
   }
 
-  render () {
+  getLocalCoords() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const location = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      }
+
+      this.props.setLocation(location)
+    })
+  }
+
+  render() {
     return (
       <section className="Application">
         <Header />
@@ -31,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

@@ -72,12 +72,12 @@ p {
   display: inline-block;
   position: absolute;
   right: 40px;
-
 }
 
 .current-weather-container p, .current-location-container p {
   font-size: 1.5em;
 }
+
 .DisplayCity {
   position: relative;
 }
@@ -182,7 +182,7 @@ input[type="text"] {
 }
 
 .extended-link {
-  background: rgba(0,0,0,0.2);
+  background: red;
   bottom: 0;
   letter-spacing: 3px;
   line-height: 3em;
@@ -190,6 +190,69 @@ input[type="text"] {
   right: 0px;
   text-align: right;
   width: 100%;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.extended-link:hover {
+  background: rgba(255,0,0,0.5);
+}
+
+.ExtendedCity span {
+  color: white;
+}
+
+.ExtendedCity .extended-days {
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.ExtendedCity .extended-day {
+  flex: 1;
+  flex-wrap: nowrap;
+  height: 160px;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.ExtendedCity .extended-day h3 {
+  text-align: center;
+  border-bottom: 1px solid #aaa;
+  padding: 2px;
+  margin-bottom: 5px;
+}
+
+.ExtendedCity .extended-day .extended-icon {
+  text-align: center;
+}
+
+
+.ExtendedCity .extended-day p {
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  height: 18px;
+  display: flex;
+}
+
+.ExtendedCity .extended-day .title {
+  flex: 1;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.ExtendedCity .extended-day .data {
+  flex: 1;
+  justify-content: flex-start;
 }
 
 footer {

@@ -1,60 +1,54 @@
 const apiKey = '9368e7f02a2beece1296d5538c3bdb6c'
+const baseWeatherURL = 'http://api.openweathermap.org/data/2.5/forecast'
 
 const getWeather = (response) => {
-  console.log('ready to dispatch current location weather')
-  console.log(response);
-
-  let formattedLocalWeather = {
+  const formattedLocalWeather = {
     city: response.city.name,
     temp: response.list[0].main.temp,
     desc: response.list[0].weather[0].main,
     wind: response.list[0].wind.speed,
-    editing: false
+    editing: false,
   }
 
   return {
     type: 'GET_LOCAL_WEATHER',
-    localWeather: formattedLocalWeather
+    localWeather: formattedLocalWeather,
   }
 }
 
 const pinCity = (response, index) => {
-  console.log("action dispatching new city")
-
-  let formattedWeather = {
+  const formattedWeather = {
     index,
     city: response.city.name,
     temp: response.list[0].main.temp,
     desc: response.list[0].weather[0].main,
-    wind: response.list[0].wind.speed
+    wind: response.list[0].wind.speed,
   }
 
   return {
     type: 'PIN_NEW_CITY',
-    cityWeather: formattedWeather
+    cityWeather: formattedWeather,
   }
 }
 
 export const setLocation = (location) => {
-  console.log("in Set Location action");
-  let localWeather = `http://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=imperial&APPID=${apiKey}`
+  const localWeather = `${baseWeatherURL}?lat=${location.latitude}&lon=${location.longitude}&units=imperial&APPID=${apiKey}`
 
   return (dispatch) => {
-    return  fetch(localWeather)
-            .then(response => response.json())
-            .then(json => dispatch(getWeather(json)))
-            .catch(err => console.log("error in getting location: " + err))
+    return fetch(localWeather)
+          .then(response => response.json())
+          .then(json => dispatch(getWeather(json)))
+          .catch(err => console.log("error in set location: " + err))
   }
 }
 
 export const setNewCity = (city, index) => {
-  console.log("in setNewCity action")
-  let cityData = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${apiKey}`
+  const cityData = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&APPID=${apiKey}`
 
   return (dispatch) => {
-    return  fetch(cityData)
-    .then(response => response.json() )
-    .then(json => dispatch(pinCity(json, index)))
-    .catch(err => console.log("error in adding city: " + err))
+    return fetch(cityData)
+          .then(response => response.json() )
+          .then(json => dispatch(pinCity(json, index)))
+          .catch(err => console.log("error in set new city: " + err))
   }
 }

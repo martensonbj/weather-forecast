@@ -4,26 +4,41 @@ import NewCityForm from '../containers/NewCityForm'
 class DisplayCity extends Component {
   constructor() {
     super()
-    this.state = { editing: false, display: false }
+    this.state = { editing: false }
   }
 
   toggleEdit() {
-    this.setState({editing: !this.state.editing, display: !this.state.display })
+    this.setState({ editing: !this.state.editing })
   }
 
-  render () {
+  toggleText(index, city) {
+    return this.state.editing || city === 'default'?
+      <NewCityForm
+        index={index}
+        handleEdit={() => this.toggleEdit()}
+        handleBlur={() => this.setState({ editing: false })}
+      /> :
+      <h2 onClick={() => this.toggleEdit()}>
+        { city }
+      </h2>
+  }
+
+  render() {
     const { index, city } = this.props
 
     const displayStyle = {
-      "display": this.state.editing? 'none' : 'inline'
+      display: this.state.editing || city === 'default' ? 'none' : 'inline'
     }
 
     return (
       <div className="DisplayCity">
-        <h2 onClick={(e) => this.toggleEdit(e)}>{this.state.editing ? <NewCityForm index={index}/> : city }</h2>
-        <p style={displayStyle} className="edit" onClick={(e) => this.toggleEdit(e)}>
-          {this.state.editing ? '' : 'Edit' }
-         </p>
+        { this.toggleText(index, city) }
+        <p
+          style={displayStyle}
+          className="edit"
+          onClick={(e) => this.toggleEdit(e)}>
+          { this.state.editing ? '' : 'Edit' }
+        </p>
       </div>
     )
   }
